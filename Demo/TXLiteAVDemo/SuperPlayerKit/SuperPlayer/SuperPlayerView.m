@@ -100,6 +100,7 @@ static UISlider *_volumeSlider;
     LOG_ME;
     self.netWatcher = [[NetWatcher alloc] init];
 
+    /*
     CGRect frame    = CGRectMake(0, -100, 10, 0);
     self.volumeView = [[MPVolumeView alloc] initWithFrame:frame];
     [self.volumeView sizeToFit];
@@ -109,11 +110,13 @@ static UISlider *_volumeSlider;
             break;
         }
     }
+    */
 
     _fullScreenBlackView                 = [UIView new];
     _fullScreenBlackView.backgroundColor = [UIColor blackColor];
 
     // 单例slider
+    /*
     _volumeSlider = nil;
     for (UIView *view in [self.volumeView subviews]) {
         if ([view.class.description isEqualToString:@"MPVolumeSlider"]) {
@@ -121,7 +124,7 @@ static UISlider *_volumeSlider;
             break;
         }
     }
-
+    */
     _playerConfig = [[SuperPlayerViewConfig alloc] init];
     // 添加通知
     [self addNotifications];
@@ -137,7 +140,7 @@ static UISlider *_volumeSlider;
 
     [self reportPlay];
     [self.netWatcher stopWatch];
-    [self.volumeView removeFromSuperview];
+//    [self.volumeView removeFromSuperview];
 }
 
 #pragma mark - 观察者、通知
@@ -1230,6 +1233,7 @@ static UISlider *_volumeSlider;
  *  @param value void
  */
 - (void)verticalMoved:(CGFloat)value {
+    /*
     self.isVolume ? ([[self class] volumeViewSlider].value -= value / 10000) : ([UIScreen mainScreen].brightness -= value / 10000);
 
     if (self.isVolume) {
@@ -1237,6 +1241,7 @@ static UISlider *_volumeSlider;
     } else {
         [self fastViewImageAvaliable:SuperPlayerImage(@"light_max") progress:[UIScreen mainScreen].brightness];
     }
+    */
 }
 
 /**
